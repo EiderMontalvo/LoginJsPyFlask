@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="ContenedorDashboard">
+        <div class="BarraSuperior">
+            <div class="PerfilUsuario">
+                <i class="fas fa-user-circle"></i>
+                <span>Bienvenido, {{ Usuario.NombreCompleto }}</span>
+            </div>
+            <div class="MenuDerecha">
+                <span class="FechaRegistro">
+                    Miembro desde: {{ Usuario.FechaRegistro.strftime('%d/%m/%Y') }}
+                </span>
+                <a href="{{ url_for('cerrar_sesion') }}" class="BotonCerrarSesion">
+                    <i class="fas fa-sign-out-alt"></i> Cerrar Sesión
+                </a>
+            </div>
+        </div>
+
+        <div class="ContenidoDashboard">
+            <div class="Tarjetas">
+                <div class="Tarjeta">
+                    <i class="fas fa-envelope"></i>
+                    <div class="InfoTarjeta">
+                        <h3>Correo Electrónico</h3>
+                        <p>{{ Usuario.CorreoElectronico }}</p>
+                    </div>
+                </div>
+                <div class="Tarjeta">
+                    <i class="fas fa-calendar-alt"></i>
+                    <div class="InfoTarjeta">
+                        <h3>Fecha de Registro</h3>
+                        <p>{{ Usuario.FechaRegistro.strftime('%d/%m/%Y %H:%M:%S') }}</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="SeccionBienvenida">
+                <h2>¡Bienvenido a tu Dashboard!</h2>
+                <p>Este es tu espacio personal donde podrás gestionar tu cuenta y ver tu información.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="PiePagina">
+        <p>&copy; 2024 Mi Aplicación. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+</body>
+</html>

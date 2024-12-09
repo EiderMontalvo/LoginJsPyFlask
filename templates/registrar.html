@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="Contenedor">
+        <div class="Registro">
+            <h1>Crear Cuenta</h1>
+            <form id="FormularioRegistro">
+                <label for="NombreCompleto">Nombre Completo:</label>
+                <input type="text" id="NombreCompleto" name="NombreCompleto" 
+                       placeholder="Ingresa tu nombre completo" required>
+
+                <label for="CorreoElectronico">Correo Electrónico:</label>
+                <input type="email" id="CorreoElectronico" name="CorreoElectronico" 
+                       placeholder="Ingresa tu correo" required>
+                
+                <label for="Contrasena">Contraseña:</label>
+                <input type="password" id="Contrasena" name="Contrasena" 
+                       placeholder="Ingresa tu contraseña" required>
+                
+                <div class="MostrarContrasena">
+                    <input type="checkbox" id="MostrarContrasena">
+                    <label for="MostrarContrasena">Mostrar contraseña</label>
+                </div>
+
+                <button type="submit" id="BotonRegistro">
+                    <span class="TextoBoton">Registrarse</span>
+                    <span class="Cargando"></span>
+                </button>
+            </form>
+            <div class="Opciones">
+                <a href="{{ url_for('login') }}">¿Ya tienes cuenta? Inicia Sesión</a>
+            </div>
+        </div>
+    </div>
+    <footer class="PiePagina">
+        <p>&copy; 2024 Mi Aplicación. Todos los derechos reservados.</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="{{ url_for('static', filename='js/registrar.js') }}"></script>
+</body>
+</html>

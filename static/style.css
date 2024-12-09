@@ -1,0 +1,322 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    line-height: 1.5;
+}
+
+.Contenedor {
+    margin: 3rem auto;
+    width: 22rem;
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 0.3125rem;
+    box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+#FormularioLogin,
+#FormularioRegistro,
+#FormularioRecuperar {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #333;
+    font-size: 0.9rem;
+}
+
+input {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1rem;
+    border: 0.0625rem solid #ddd;
+    border-radius: 0.3125rem;
+    box-sizing: border-box;
+    margin-bottom: 1rem;
+}
+
+input::placeholder {
+    color: #999;
+}
+
+.MostrarContrasena {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.MostrarContrasena input[type="checkbox"] {
+    width: auto;
+    margin: 0 0.5rem 0 0;
+}
+
+.MostrarContrasena label {
+    margin: 0;
+    font-weight: normal;
+    font-size: 0.875rem;
+}
+
+#BotonLogin,
+#BotonRegistro,
+#BotonRecuperar {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 0.3125rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 1rem;
+    position: relative;
+}
+
+#BotonLogin:hover,
+#BotonRegistro:hover,
+#BotonRecuperar:hover {
+    background-color: #555;
+}
+
+.Cargando {
+    display: none;
+    width: 1.25rem;
+    height: 1.25rem;
+    border: 0.1875rem solid #f3f3f3;
+    border-top: 0.1875rem solid #333;
+    border-radius: 50%;
+    animation: Girar 1s linear infinite;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@keyframes Girar {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+button:disabled .TextoBoton {
+    visibility: hidden;
+}
+
+button:disabled .Cargando {
+    display: block;
+}
+
+.Opciones {
+    text-align: center;
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 0.0625rem solid #ddd;
+}
+
+.Opciones a {
+    color: #333;
+    text-decoration: none;
+    font-size: 0.875rem;
+    margin: 0 0.5rem;
+}
+
+.Opciones a:hover {
+    text-decoration: underline;
+}
+
+.PiePagina {
+    text-align: center;
+    padding: 0.75rem 0;
+    background-color: #333;
+    color: white;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    font-size: 0.875rem;
+}
+
+.ContenedorDashboard {
+    margin: 2rem auto;
+    width: 90%;
+    max-width: 60rem;
+    background-color: white;
+    padding: 2rem;
+    border-radius: 0.3125rem;
+    box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.1);
+}
+
+.BarraSuperior {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 0.0625rem solid #ddd;
+}
+
+.BotonCerrarSesion {
+    background-color: #ff4444;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.3125rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-decoration: none;
+}
+
+.BotonCerrarSesion:hover {
+    background-color: #cc0000;
+}
+
+.ContenedorDashboard {
+    margin: 2rem auto;
+    width: 90%;
+    max-width: 1200px;
+    background-color: white;
+    padding: 2rem;
+    border-radius: 0.3125rem;
+    box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.1);
+}
+
+.BarraSuperior {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid #ddd;
+}
+
+.PerfilUsuario {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.PerfilUsuario i {
+    font-size: 2rem;
+    color: #333;
+}
+
+.MenuDerecha {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.FechaRegistro {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.BotonCerrarSesion {
+    background-color: #ff4444;
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.3125rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: background-color 0.3s;
+}
+
+.BotonCerrarSesion:hover {
+    background-color: #cc0000;
+}
+
+.Tarjetas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.Tarjeta {
+    background-color: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 0.3125rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    transition: transform 0.3s;
+}
+
+.Tarjeta:hover {
+    transform: translateY(-5px);
+}
+
+.Tarjeta i {
+    font-size: 2rem;
+    color: #333;
+}
+
+.InfoTarjeta h3 {
+    margin: 0;
+    font-size: 1rem;
+    color: #666;
+}
+
+.InfoTarjeta p {
+    margin: 0.5rem 0 0 0;
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.SeccionBienvenida {
+    text-align: center;
+    padding: 2rem;
+    background-color: #f8f9fa;
+    border-radius: 0.3125rem;
+}
+
+.SeccionBienvenida h2 {
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.SeccionBienvenida p {
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .ContenedorDashboard {
+        margin: 1rem;
+        padding: 1rem;
+    }
+
+    .BarraSuperior {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+
+    .MenuDerecha {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .Tarjetas {
+        grid-template-columns: 1fr;
+    }
+}
